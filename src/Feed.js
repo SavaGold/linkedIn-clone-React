@@ -7,10 +7,13 @@ import { CalendarViewDay, EventNote, Subscriptions } from '@material-ui/icons'
 import Post from './Post.js'
 import { db } from './firebase'
 import firebase from 'firebase';
+import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
 
 function Feed() {
     const [input, setInput] = useState('')
     const [posts, setPosts] = useState([]);
+    const user = useSelector(selectUser);
 
     useEffect(() => {
         db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => (
@@ -27,10 +30,10 @@ function Feed() {
         e.preventDefault();
 
         db.collection('posts').add({
-            name: 'Zakhar Savchuk',
-            description: 'firebase test',
+            name: user.displayName,
+            description: user.email,
             message: input,
-            photoUrl: '',
+            photoUrl: user.photoUrl || '',
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
 
         });
