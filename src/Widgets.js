@@ -23,13 +23,10 @@ function Widgets() {
                 <Info />
             </div>
             {newsArticle('SavaGold Developer', 'Top news - 99999 readers')}
-            {newsArticle('Барига Сашко', 'Як продати монітор і не вийти в мінус')}
             {newsArticle('Corona-19', 'How to die in 2021?')}
             {newsArticle('Tesla car', 'Top cars - 99998 readers')}
             {newsArticle('Developer', 'Top news - 99999 readers')}
             {newsArticle('SavaGold ', 'Top news - 99999 readers')}
-            {newsArticle('Барига', 'Top news - 99999 readers')}
-            {newsArticle('Сашко', 'Top news - 99999 readers')}
             {newsArticle('Car', 'Top news - 99999 readers')}
             {newsArticle('Money', 'Business - 1 reader')}
         </div>
